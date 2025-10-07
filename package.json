@@ -1,0 +1,53 @@
+{
+  "name": "pixi-tile-grid",
+  "version": "1.0.0",
+  "description": "A high-performance, single-responsibility tile rendering library for PixiJS v8. PixiTileGrid is designed as a pure \"View\" component that efficiently visualizes grid-based tile data while maintaining complete separation from game logic.",
+  "type": "module",
+  "main": "./dist/pixi-tile-grid.cjs.js",
+  "module": "./dist/pixi-tile-grid.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/pixi-tile-grid.es.js",
+      "require": "./dist/pixi-tile-grid.cjs.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axel-dl/pixi-tile-grid.git"
+  },
+  "keywords": [
+    "pixi",
+    "pixijs",
+    "tile",
+    "tilemap",
+    "grid",
+    "rendering",
+    "game",
+    "2d"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axel-dl/pixi-tile-grid/issues"
+  },
+  "homepage": "https://github.com/axel-dl/pixi-tile-grid#readme",
+  "dependencies": {
+    "pixi.js": "^8.13.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9"
+  }
+}
