@@ -1,3 +1,7 @@
 // Main entry point for the library
-export { PixiTileGrid } from './PixiTileGrid';
+import { PixiTileGrid } from './PixiTileGrid';
+export { PixiTileGrid };
 export type { TileGridOptions, LayerDefinition } from './PixiTileGrid';
+
+// Default export for consumers who prefer `import PixiTileGrid from 'pixi-tile-grid'`
+export default PixiTileGrid;

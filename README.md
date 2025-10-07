@@ -175,6 +175,16 @@ git tag vX.Y.Z; git push --tags
 
 For a complete, maintainers-only checklist and extra notes (publishing files, npm ignore, changelog formatting), see `internal/PUBLISHING.md`.
 
+Release helper script
+
+We provide a small helper to release a new version locally (bump version, build, publish, push tags):
+
+```bash
+node ./scripts/release.cjs patch
+```
+
+You can replace `patch` with `minor`, `major`, or a specific semver (e.g. `1.2.3`).
+
 ## Architecture
 
 PixiTileGrid follows these principles:
