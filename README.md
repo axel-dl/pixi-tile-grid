@@ -126,6 +126,55 @@ interface LayerDefinition {
 - 📖 **[How It Works](./docs/how-it-works.md)** - Rendering engine deep dive
 - **[Full Documentation](./docs/README.md)** - All docs in one place
 
+## Package & npm
+
+PixiTileGrid is published to npm as `pixi-tile-grid` (package.json: name & version). Key points for consumers and maintainers:
+
+- Package name: `pixi-tile-grid`
+- Version: see `package.json` (this repository's source-of-truth)
+- License: MIT
+- Peer dependency: `pixi.js` (v8.x) — consumers must install PixiJS separately
+- Distributed files: the build outputs live in `dist/` and are the published artifacts (ESM, CJS, types).
+
+Import examples:
+
+```ts
+// ESM
+import { PixiTileGrid } from 'pixi-tile-grid';
+
+// CommonJS
+const { PixiTileGrid } = require('pixi-tile-grid');
+```
+
+Publishing (maintainers)
+
+1. Update `package.json` version and `CHANGELOG.md` as appropriate.
+1. Build the library and verify types:
+
+```bash
+pnpm install; pnpm build
+```
+
+1. Run tests and coverage locally:
+
+```bash
+pnpm test; pnpm test:coverage
+```
+
+1. Publish to npm (public):
+
+```bash
+npm publish --access public
+```
+
+1. Tag the release in git and push tags:
+
+```bash
+git tag vX.Y.Z; git push --tags
+```
+
+For a complete, maintainers-only checklist and extra notes (publishing files, npm ignore, changelog formatting), see `internal/PUBLISHING.md`.
+
 ## Architecture
 
 PixiTileGrid follows these principles:

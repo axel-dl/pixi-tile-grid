@@ -148,3 +148,15 @@ See the main repository for contribution guidelines.
 ## License
 
 MIT
+
+## Package & npm
+
+This repository publishes the `pixi-tile-grid` package to npm. The main `README.md` contains quick publish steps for maintainers; the `internal/PUBLISHING.md` file contains a full checklist and details for packaging.
+
+Key points:
+
+- Package name: `pixi-tile-grid`
+- Peer dependency: `pixi.js` (v8.x)
+- Built artifacts live in `dist/` and are published to npm
+
+See `internal/PUBLISHING.md` for the full maintainer checklist.
