@@ -9,7 +9,7 @@
 
 ## Overview
 
-PixiTileGrid is a **pure "View" component** that efficiently visualizes grid-based tile data with PixiJS v8. It follows the single-responsibility principle: it renders tiles, and only tiles. No game logic, no collision detection, no state management - just fast, reliable tile rendering.
+PixiTileGrid is a **pure "View" component** that efficiently visualizes grid-based tile data with PixiJS v8. It is a spritesheet-driven renderer: you provide tile indices (map data) and a PIXI.Spritesheet (or a programmatically-generated spritesheet) and PixiTileGrid maps each index to a texture and renders sprites. It follows the single-responsibility principle: it renders tiles, and only tiles. No game logic, no collision detection, no state management - just fast, reliable tile rendering.
 
 ### Why PixiTileGrid?
 
@@ -42,6 +42,9 @@ yarn add pixi-tile-grid pixi.js
 import { PixiTileGrid } from 'pixi-tile-grid';
 import * as PIXI from 'pixi.js';
 
+// NOTE: PixiTileGrid is spritesheet-driven. Load or generate a spritesheet first (async)
+// Example uses PixiJS Assets for loading a prepared spritesheet JSON + image.
+
 const layers = [
   {
     name: 'ground',
@@ -53,16 +56,22 @@ const layers = [
     ]
   }
 ];
+// Async initialization pattern (recommended)
+async function createGrid(app) {
+  // load a spritesheet or create one programmatically
+  const spritesheet = await PIXI.Assets.load('path/to/tilesheet.json');
 
-const tileGrid = new PixiTileGrid({
-  mapData: layers,
-  spriteSheet: yourPixiSpritesheet,
-  tileWidth: 32,
-  tileHeight: 32,
-  tileToIdTextureKey: (index) => `tile_${index}` // 1 → "tile_1"
-});
+  const tileGrid = new PixiTileGrid({
+    mapData: layers,
+    spriteSheet: spritesheet,
+    tileWidth: 32,
+    tileHeight: 32,
+    // map numbers in your data to frame keys in the spritesheet
+    tileToIdTextureKey: (index) => (index === 0 ? null : `tile_${index}`)
+  });
 
-app.stage.addChild(tileGrid);
+  app.stage.addChild(tileGrid);
+}
 ```
 
 ## Tile Mapping
@@ -87,6 +96,8 @@ tileToIdTextureKey: (index) => {
   return `misc_${index}`;
 }
 ```
+
+See also: docs/PROGRAMMATIC_SPRITESHEET.md for an example that generates a spritesheet programmatically when you don't have image assets.
 
 ## API
 
@@ -113,7 +124,7 @@ interface LayerDefinition {
 ## Documentation
 
 - 📖 **[How It Works](./docs/how-it-works.md)** - Rendering engine deep dive
--  **[Full Documentation](./docs/README.md)** - All docs in one place
+- **[Full Documentation](./docs/README.md)** - All docs in one place
 
 ## Architecture
 
@@ -195,11 +206,12 @@ pnpm test
 
 ## License
 
-CC0 1.0 Universal (Public Domain)
+MIT
 
 ## Contributing
 
 Contributions welcome! Please ensure:
+
 - All tests pass
 - Code follows TypeScript strict mode
 - Changes maintain single-responsibility focus

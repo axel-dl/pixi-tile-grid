@@ -9,13 +9,19 @@ Complete documentation for the PixiTileGrid library.
 ## Core Documentation
 
 ### [How It Works](./how-it-works.md)
+
 Deep dive into the rendering engine architecture:
+
 - Rendering pipeline explanation
 - Layer system architecture
 - Coordinate systems
 - Scene graph structure
 - Performance characteristics
 - Design decisions
+
+### [Programmatic Spritesheet](./PROGRAMMATIC_SPRITESHEET.md)
+
+Guide for generating a spritesheet at runtime when you don't have image assets.
 
 ## API Reference
 
@@ -105,7 +111,7 @@ const tileGrid = new PixiTileGrid({
 
 ## Architecture
 
-```
+```text
 PixiTileGrid (extends PIXI.Container)
   │
   ├─ Properties
@@ -141,4 +147,4 @@ See the main repository for contribution guidelines.
 
 ## License
 
-CC0 1.0 Universal (Public Domain)
+MIT
