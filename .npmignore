@@ -1,0 +1,30 @@
+# Development files
+src/
+tests/
+docs/
+
+# Config files
+tsconfig.json
+vite.config.ts
+jest.config.js
+.github/
+
+# Editor files
+.vscode/
+.idea/
+
+# Git files
+.git/
+.gitignore
+
+# Documentation (keep README.md)
+DEVELOPMENT_GUIDE.md
+PORTFOLIO_GUIDE.md
+
+# Misc
+*.log
+.DS_Store
+node_modules/
+coverage/
+.env
+*.local

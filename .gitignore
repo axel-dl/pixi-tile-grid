@@ -9,6 +9,9 @@ dist/
 build/
 out/
 
+# npm package tarballs
+*.tgz
+
 # Environment files
 .env
 .env.*
@@ -25,6 +28,11 @@ Thumbs.db
 
 # Misc
 *.log
-*.tgz
-*.zip
 *.tmp
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Internal documentation (not for public repo)
+internal/

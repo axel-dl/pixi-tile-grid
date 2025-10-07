@@ -1,26 +1,40 @@
-# PixieTileGrid
+# PixiTileGrid
 
-A high-performance, single-responsibility tile rendering library for PixiJS v8.
+> A high-performance, single-responsibility tile rendering library for PixiJS v8
+
+[![npm version](https://badge.fury.io/js/pixi-tile-grid.svg)](https://www.npmjs.com/package/pixi-tile-grid)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
+[![Test Coverage](https://img.shields.io/badge/coverage-91.93%25-brightgreen.svg)](https://github.com/axel-dl/pixi-tile-grid)
 
 ## Overview
 
-PixieTileGrid is a pure "View" component that efficiently visualizes grid-based tile data. It focuses exclusively on rendering tiles while maintaining complete separation from game logic and state management.
+PixiTileGrid is a **pure "View" component** that efficiently visualizes grid-based tile data with PixiJS v8. It follows the single-responsibility principle: it renders tiles, and only tiles. No game logic, no collision detection, no state management - just fast, reliable tile rendering.
 
-## Features
+### Why PixiTileGrid?
 
-- 🚀 **High Performance** - Efficient rendering optimized for large tilemaps
-- 📚 **Multi-Layer Support** - Stack multiple tile layers with z-indexing
-- 🎨 **Flexible Mapping** - Custom tile-to-texture mapping function
-- 🎯 **Pure View** - No game logic, just rendering
-- 📦 **TypeScript** - Full type safety and IntelliSense support
+- 🎯 **Focused**: Does one thing exceptionally well - renders tiles
+- 🚀 **Fast**: Designed for performance with chunking/culling support
+- 📚 **Layered**: Stack multiple tile layers with z-index control
+- 🎨 **Flexible**: Custom tile-to-texture mapping
+- 🔒 **Type-Safe**: Full TypeScript support with strict mode
+- ✅ **Tested**: 91%+ test coverage
+- 📦 **Tiny**: <3KB gzipped, tree-shakeable
 
 ## Installation
 
 ```bash
-pnpm add pixi-tile-grid
-# or
-npm install pixi-tile-grid
+# Using pnpm (recommended)
+pnpm add pixi-tile-grid pixi.js
+
+# Using npm
+npm install pixi-tile-grid pixi.js
+
+# Using yarn
+yarn add pixi-tile-grid pixi.js
 ```
+
+> **Note**: PixiJS v8 is a peer dependency and must be installed separately.
 
 ## Quick Start
 

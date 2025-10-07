@@ -20,7 +20,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -29,25 +31,38 @@
   "keywords": [
     "pixi",
     "pixijs",
+    "pixi-v8",
     "tile",
     "tilemap",
+    "tileset",
     "grid",
     "rendering",
     "game",
-    "2d"
+    "2d",
+    "webgl",
+    "canvas",
+    "typescript",
+    "layer",
+    "spritesheet"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Axel Delgadillo axeld844@gmail.com",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/axel-dl/pixi-tile-grid/issues"
   },
   "homepage": "https://github.com/axel-dl/pixi-tile-grid#readme",
-  "dependencies": {
-    "pixi.js": "^8.13.2"
+  "peerDependencies": {
+    "pixi.js": "^8.0.0"
   },
   "devDependencies": {
+    "@jest/globals": "^30.2.0",
+    "@types/jest": "^30.0.0",
     "@types/node": "^24.7.0",
+    "jest": "^30.2.0",
+    "pixi.js": "^8.13.2",
+    "ts-jest": "^29.4.4",
     "typescript": "^5.9.3",
-    "vite": "^7.1.9"
+    "vite": "^7.1.9",
+    "vite-plugin-dts": "^4.5.4"
   }
 }

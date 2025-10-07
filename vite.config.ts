@@ -1,11 +1,20 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
+import dts from 'vite-plugin-dts';
 
 // Get __dirname equivalent in ESM
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
+  plugins: [
+    dts({
+      include: ['src/**/*.ts'],
+      exclude: ['src/**/*.test.ts'],
+      outDir: 'dist',
+      rollupTypes: true
+    })
+  ],
   build: {
     lib: {
       // Entry point for your library
@@ -34,8 +43,8 @@ export default defineConfig({
         // Preserve source structure for better tree-shaking
         preserveModules: false,
         
-        // Export style
-        exports: 'named'
+        // Export style - use 'auto' for better compatibility
+        exports: 'auto'
       }
     },
     
