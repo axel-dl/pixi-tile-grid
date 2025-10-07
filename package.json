@@ -1,6 +1,6 @@
 {
   "name": "pixi-tile-grid",
-  "version": "1.0.0",
+  "version": "1.0.1-beta.0",
   "description": "A high-performance, single-responsibility tile rendering library for PixiJS v8. PixiTileGrid is designed as a pure \"View\" component that efficiently visualizes grid-based tile data while maintaining complete separation from game logic.",
   "type": "module",
   "main": "./dist/pixi-tile-grid.cjs.js",
