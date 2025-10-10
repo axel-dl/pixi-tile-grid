@@ -129,3 +129,5 @@ export class PixiTileGrid extends PIXI.Container {
         return sprite;
     }
 }
+
+export default PixiTileGrid;
