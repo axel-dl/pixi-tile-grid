@@ -139,10 +139,16 @@ PixiTileGrid is published to npm as `pixi-tile-grid` (package.json: name & versi
 Import examples:
 
 ```ts
-// ESM
-import { PixiTileGrid } from 'pixi-tile-grid';
+// ESM - default import (recommended for simplicity)
+import PixiTileGrid from 'pixi-tile-grid';
 
-// CommonJS
+// ESM - named import (also supported)
+import { PixiTileGrid as NamedPixiTileGrid } from 'pixi-tile-grid';
+
+// CommonJS - default (some bundlers expose the default on `require(...).default`)
+const PixiTileGrid = require('pixi-tile-grid').default || require('pixi-tile-grid');
+
+// CommonJS - named
 const { PixiTileGrid } = require('pixi-tile-grid');
 ```
 
